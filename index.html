@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Erlangga</title>
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #1a1a1a;
+      --card: #ffffffcc;
+      --accent: #00c6ff;
+      --accent-dark: #007bff;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --card: #1f1f1fcc;
+      --accent: #00c6ff;
+      --accent-dark: #004aad;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .header {
+      padding: 80px 20px 40px;
+      text-align: center;
+      background: linear-gradient(to right, var(--accent-dark), var(--accent));
+      color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .header h1 {
+      font-size: 3em;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    #typer {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+
+    .mode-toggle {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .mode-toggle button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px;
+      background: var(--card);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h2 {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    .skills .skill {
+      margin: 10px 0;
+    }
+
+    .bar-bg {
+      background: #ccc;
+      height: 12px;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 12px;
+      background: linear-gradient(to right, var(--accent), var(--accent-dark));
+      border-radius: 50px;
+    }
+
+    .projects {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #888;
+      margin-top: 50px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 2.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Erlangga</h1>
+    <p id="typer">|</p>
+  </div>
+
+  <div class="mode-toggle">
+    <button onclick="toggleMode()">🌗 Ganti Mode</button>
+  </div>
+
+  <div class="container">
+    <h2>🧑‍💻 Tentang Saya</h2>
+    <p>Hai! Saya Erlangga, siswa SMK KRIAN 1 jurusan RPL yang semangat belajar web development. Semua yang kamu lihat di web ini saya kerjakan langsung dari HP pakai Acode! 😄</p>
+
+    <h2>🚀 Skill Saya</h2>
+    <div class="skills">
+      <div class="skill">HTML
+        <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
+      </div>
+      <div class="skill">CSS
+        <div class="bar-bg"><div class="bar-fill" style="width: 75%"></div></div>
+      </div>
+      <div class="skill">JavaScript
+        <div class="bar-bg"><div class="bar-fill" style="width: 60%"></div></div>
+      </div>
+      <div class="skill">Git & GitHub
+        <div class="bar-bg"><div class="bar-fill" style="width: 40%"></div></div>
+      </div>
+    </div>
+
+    <h2>💼 Proyek Saya</h2>
+    <div class="projects">
+      <div class="project-card">
+        <strong>📄 Web Biodata</strong>
+        <p>Website sederhana menampilkan informasi pribadi. Dibuat dengan HTML dan CSS.</p>
+      </div>
+      <div class="project-card">
+        <strong>🔢 Kalkulator</strong>
+        <p>Aplikasi kalkulator dasar menggunakan JavaScript interaktif.</p>
+      </div>
+      <div class="project-card">
+        <strong>🔐 Form Login</strong>
+        <p>Form login dengan validasi input. Responsive dan clean UI.</p>
+      </div>
+    </div>
+
+    <h2>📬 Kontak</h2>
+    <p>Email: <a href="mailto:erlanggasaktig@email.com">erlanggasaktig@email.com</a><br>
+    IG: <a href="https://instagram.com/erlsgnd_" target="_blank">@erlsgnd_</a><br>
+    GitHub: <a href="https://github.com/erlsgnd" target="_blank">github.com/erlsgnd</a></p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Erlangga. Dibuat sepenuhnya dari HP 📱 #NoLaptop
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    const text = "Front-End Dev 🚀 | RPL | SMK KRIAN 1";
+    let i = 0;
+    function ketik() {
+      if (i < text.length) {
+        document.getElementById("typer").innerHTML = text.substring(0, i + 1) + "|";
+        i++;
+        setTimeout(ketik, 60);
+      } else {
+        document.getElementById("typer").innerHTML = text;
+      }
+    }
+    ketik();
+  </script>
+
+</body>
+</html>
